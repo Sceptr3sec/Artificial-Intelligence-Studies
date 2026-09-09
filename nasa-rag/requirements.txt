@@ -1,0 +1,16 @@
+chromadb==1.5.7
+openai==1.99.9
+langchain-openai==0.3.27
+langchain-community==0.3.27
+langchain-google-vertexai==3.2.3
+ragas==0.4.3
+pandas==2.3.3
+streamlit==1.56.0
+python-dotenv==1.0.1
+
+# Transitive metric dependencies ragas needs at runtime but doesn't declare
+# strictly enough to auto-install (verified by actually running the import
+# chain, not assumed):
+sacrebleu
+rouge_score
+rapidfuzz

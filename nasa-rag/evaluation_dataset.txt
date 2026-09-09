@@ -1,0 +1,45 @@
+# NASA RAG Chat — Evaluation Dataset
+#
+# Format per entry:
+#   Category: <category>
+#   Mission: <mission or "all">
+#   Question: <question text>
+#   Expected: <brief description of what a correct, grounded answer should cover>
+#
+# Used by evaluate_dataset.py to run each question through the full RAG + LLM
+# pipeline and score the resulting answer with RAGAS metrics.
+
+Category: Overview
+Mission: apollo_11
+Question: What was the primary objective of the Apollo 11 mission?
+Expected: Should mention landing the first humans on the Moon and returning them safely to Earth, referencing the mission's overall goals from the flight plan or PAO transcript.
+
+Category: Crew
+Mission: apollo_11
+Question: Who were the astronauts on the Apollo 11 mission and what were their roles?
+Expected: Should name Neil Armstrong (commander), Buzz Aldrin (lunar module pilot), and Michael Collins (command module pilot), grounded in the transcripts.
+
+Category: Emergency
+Mission: apollo_13
+Question: What emergency occurred during the Apollo 13 mission and how did the crew respond?
+Expected: Should describe the oxygen tank explosion en route to the Moon and the crew/mission control's response (e.g., using the lunar module as a "lifeboat"), citing the CM or PAO transcripts.
+
+Category: Disaster Analysis
+Mission: challenger
+Question: What caused the Challenger disaster according to the mission audio transcripts?
+Expected: Should reference the O-ring failure / structural breakup shortly after launch as discussed in the mission audio, while noting if the transcripts themselves don't contain the full post-incident investigation findings.
+
+Category: Technical
+Mission: apollo_11
+Question: What technical systems or procedures are described in the Apollo 11 command module transcripts?
+Expected: Should reference specific onboard systems, checklists, or procedures mentioned in the CM transcript (e.g., navigation, communication, or module systems), staying grounded in retrieved text.
+
+Category: Timeline
+Mission: apollo_13
+Question: What was the sequence of events during the Apollo 13 mission from launch to splashdown?
+Expected: Should give a chronological overview (launch, the oxygen tank incident, the return trip using the lunar module, and splashdown), grounded in transcript content.
+
+Category: Timeline
+Mission: all
+Question: How do the three missions (Apollo 11, Apollo 13, Challenger) compare in terms of outcome?
+Expected: Should note Apollo 11 succeeded in its landing, Apollo 13 experienced an in-flight emergency but crew returned safely, and Challenger ended in disaster — while being careful not to overstate what's actually supported by the retrieved context.
